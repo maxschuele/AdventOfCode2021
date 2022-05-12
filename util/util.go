@@ -33,6 +33,14 @@ func Atoi(input string) int {
 	return out
 }
 
+func ArrAtoi(input []string) []int {
+	var out []int
+	for _, v := range input {
+		out = append(out, Atoi(v))
+	}
+	return out
+}
+
 func ParseBinary(input string) int {
 	i, e := strconv.ParseInt(input, 2, 64)
 	if e != nil {
