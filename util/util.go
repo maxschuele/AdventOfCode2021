@@ -3,6 +3,7 @@ package util
 import (
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -47,4 +48,22 @@ func ParseBinary(input string) int {
 		panic(e)
 	}
 	return int(i)
+}
+
+func SortString(s string) string {
+	sa := strings.Split(s, "")
+	sort.Strings(sa)
+	return strings.Join(sa,"")
+}
+
+func SplitToString(a []int, sep string) string {
+	if len(a) == 0 {
+		return ""
+	}
+	
+	b := make([]string, len(a))
+	for i, v := range a {
+		b[i] = strconv.Itoa(v)
+	}
+	return strings.Join(b, sep)
 }

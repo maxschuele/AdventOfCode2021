@@ -9,14 +9,14 @@ import (
 func main() {
 	crabs := util.ArrAtoi(strings.Split(util.GetInput(), ","))
 
-	max := 0
+	maxHeight := 0
 	for i := 1; i < len(crabs); i++ {
 		if crabs[i-1] < crabs[i] {
-			max = crabs[i]
+			maxHeight = crabs[i]
 		}
 	}
 
-	costs := make([]int, max+1)
+	costs := make([]int, maxHeight+1)
 	n := 0
 	for i := range costs {
 		for j := range crabs {
